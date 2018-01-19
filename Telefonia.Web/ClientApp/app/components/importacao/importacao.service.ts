@@ -17,6 +17,6 @@ export class ImportacaoService {
         var datePipe = new DatePipe("en-US");
         var strData = datePipe.transform(dataInicial, 'yyyyMMddT000000');
 
-        return this.http.get("/api/importacao/" + strData).map(data => data.json());
+        return this.http.get("http://127.0.0.1:5003/api/importacao/" + strData).map(data => data.json());
     }
 }

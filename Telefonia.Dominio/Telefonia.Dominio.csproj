@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Autenticacao.cs" />
     <Compile Include="Entidades\Importacao.cs" />
-    <Compile Include="Entidades\Log.cs" />
+    <Compile Include="Entidades\Logs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\IRepositorioLog.cs" />
     <Compile Include="Servico\Interface\IServicoImportacao.cs" />

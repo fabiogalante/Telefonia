@@ -2,7 +2,7 @@
 
 namespace Telefonia.Dominio.Entidades
 {
-    public class Log
+    public class Logs
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
