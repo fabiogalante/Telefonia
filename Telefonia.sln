@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{90A306D0-55B2-4DEA-AADA-840BE0771C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Api", "Telefonia.Api\Telefonia.Api.csproj", "{0C7C4EDF-DE43-49CD-B532-7141A1163D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Dominio", "Telefonia.Dominio\Telefonia.Dominio.csproj", "{D8264678-3C35-4EA0-905B-9309596B764E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Repositorio", "Telefonia.Repositorio\Telefonia.Repositorio.csproj", "{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{DBEA5333-6BB4-40AD-BA07-81DCB4EA5959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Web", "Telefonia.Web\Telefonia.Web.csproj", "{5691599E-F486-492D-8439-99B70674ADD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{FC258E4E-8203-411D-BB33-2767FA336D77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C7C4EDF-DE43-49CD-B532-7141A1163D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7C4EDF-DE43-49CD-B532-7141A1163D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7C4EDF-DE43-49CD-B532-7141A1163D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7C4EDF-DE43-49CD-B532-7141A1163D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8264678-3C35-4EA0-905B-9309596B764E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8264678-3C35-4EA0-905B-9309596B764E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8264678-3C35-4EA0-905B-9309596B764E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8264678-3C35-4EA0-905B-9309596B764E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5691599E-F486-492D-8439-99B70674ADD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5691599E-F486-492D-8439-99B70674ADD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5691599E-F486-492D-8439-99B70674ADD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5691599E-F486-492D-8439-99B70674ADD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C7C4EDF-DE43-49CD-B532-7141A1163D6F} = {90A306D0-55B2-4DEA-AADA-840BE0771C38}
+		{D8264678-3C35-4EA0-905B-9309596B764E} = {90A306D0-55B2-4DEA-AADA-840BE0771C38}
+		{4EA19803-7B61-4BD9-9A1E-5E5C7EBC4EC4} = {90A306D0-55B2-4DEA-AADA-840BE0771C38}
+		{5691599E-F486-492D-8439-99B70674ADD2} = {DBEA5333-6BB4-40AD-BA07-81DCB4EA5959}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DF9789C-E762-40ED-A35D-B235A8528DF3}
+	EndGlobalSection
+EndGlobal
