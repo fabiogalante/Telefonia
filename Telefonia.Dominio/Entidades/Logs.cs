@@ -4,7 +4,7 @@ namespace Telefonia.Dominio.Entidades
 {
     public class Logs
     {
-        public int Id { get; set; }
+        public int LogSistemaId { get; set; }
         public DateTime Data { get; set; }
         public int? LogOrigemId { get; set; }
         public string Severidade { get; set; }
@@ -17,5 +17,9 @@ namespace Telefonia.Dominio.Entidades
         public string Excecao { get; set; }
         public int? UsuarioId { get; set; }
         public int? LogContextoId { get; set; }
+
+
+
+        
     }
 }

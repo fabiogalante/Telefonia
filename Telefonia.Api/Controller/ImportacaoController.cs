@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Telefonia.Dominio.Entidades;
@@ -9,25 +8,26 @@ using Telefonia.Dominio.Servico.Interface;
 
 namespace Telefonia.Api.Controller
 {
+    [Route("api/importacao")]
     public class ImportacaoController : ApiController
     {
-        private readonly IServicoImportacao _servicoImportacao;
+        private readonly IServicoLog _servicoLog;
 
-        public ImportacaoController(IServicoImportacao servicoImportacao)
+        public ImportacaoController(IServicoLog servicoLog)
         {
-            _servicoImportacao = servicoImportacao;
+            _servicoLog = servicoLog;
         }
 
-        public async Task<IHttpActionResult> Importar(string dataInicial)
+        [HttpGet]
+        [Route("importar")]
+        public async Task<IHttpActionResult> Importar()
         {
+            DateTime dataInicial = DateTime.Now; //.AddMonths(-15);
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            DateTime data = DateTime.ParseExact(dataInicial, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
-
-            string bearer = string.Empty;
-
-            var retorno = await _servicoImportacao.Listar(bearer, data).GetAwaiter().GetResult();
+            var retorno = await _servicoLog.Importar(dataInicial);
 
             return Ok(retorno.ToList());
 

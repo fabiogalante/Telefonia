@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Consulta\EFRepositorioLog.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Mapeamento\LogsMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,10 +59,7 @@
       <Name>Telefonia.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Externo\" />
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

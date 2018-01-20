@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.4-preview1\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -87,6 +88,9 @@
     <Reference Include="System.Web.Http.Owin, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.4-preview1\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,13 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\HomeController.cs" />
-    <Compile Include="Controller\ImportController.cs" />
+    <Compile Include="Controller\ImportacaoController.cs" />
     <Compile Include="Controller\LogsController.cs" />
-    <Compile Include="Controller\WebsitesController.cs" />
-    <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProviderTokenAccess.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

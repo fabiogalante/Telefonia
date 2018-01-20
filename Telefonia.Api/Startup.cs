@@ -1,27 +1,22 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
 using System.Net.Http.Formatting;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
+using Telefonia.Dominio.Repositorio;
 using Telefonia.Dominio.Servico;
 using Telefonia.Dominio.Servico.Interface;
+using Telefonia.Repositorio;
+using Telefonia.Repositorio.Consulta;
 
 namespace Telefonia.Api
 {
     public class Startup
     {
-        // This code configures Web API. The Startup class is specified as a type
-        // parameter in the WebApp.Start method.
         public void Configuration(IAppBuilder appBuilder)
         {
             // Configuração da Web API self-host. 
@@ -34,36 +29,14 @@ namespace Telefonia.Api
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            // Filtro de excessão
-            // config.Filters.Add(new SuperExceptionFilter());
+            // Habilitando o cors
+            config.EnableCors();
 
             // Configurações de injeção de dependência
             ConfiguracaoDi(appBuilder, config);
 
-            // Habilitando o cors
-            config.EnableCors();
-
             // Configurações de formato de saida
             ConfiguracaoJson(config);
-
-            // Configuração de acesso
-            var optionsConfigurationToken = new OAuthAuthorizationServerOptions
-            {
-                // Permitindo acesso ao endereço de fornecimento do token precisar de HTTPS. Em produção o valor deve ser FALSE
-                AllowInsecureHttp = true,
-
-                // Endereço do fornecimento do token de acesso
-                TokenEndpointPath = new PathString("/token"),
-
-                // Tempo do token de acesso
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(1),
-
-                Provider = new ProviderTokenAccess()
-            };
-
-            // Ativar o token de acesso WebApi
-            appBuilder.UseOAuthAuthorizationServer(optionsConfigurationToken);
-            appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
             // Ativando as configurações
             appBuilder.UseWebApi(config);
@@ -82,19 +55,20 @@ namespace Telefonia.Api
             config.Formatters.JsonFormatter.SerializerSettings = jsonSerializerSettings;
         }
 
-        private void ConfiguracaoAcessoToken(IAppBuilder appBuilder)
-        {
-            
-        }
-
         private void ConfiguracaoDi(IAppBuilder appBuilder, HttpConfiguration config)
         {
+            var connectionStrings = ConfigurationManager.ConnectionStrings;
+
             var builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
+            var connectionString = connectionStrings["connection"].ConnectionString;
+
             builder.RegisterType<ServicoLog>().As<IServicoLog>().InstancePerRequest();
-            builder.RegisterType<ServicoImportacao>().As<IServicoImportacao>().InstancePerRequest();
+            builder.RegisterType<ServicoLogin>().As<IServicoLogin>().InstancePerRequest();
+            builder.RegisterType<EFRepositorioLog>().As<IRepositorioLog>().WithParameter("connectionString", connectionString).InstancePerRequest();
+            builder.RegisterType<Contexto>().WithParameter("connectionString", connectionString).InstancePerRequest();
 
             var container = builder.Build();
 

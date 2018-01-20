@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{90A306D0-55B2-4DEA-AADA-840BE0771C38}"
 EndProject
@@ -13,9 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Repositorio", "Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{DBEA5333-6BB4-40AD-BA07-81DCB4EA5959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefonia.Web", "Telefonia.Web\Telefonia.Web.csproj", "{5691599E-F486-492D-8439-99B70674ADD2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{FC258E4E-8203-411D-BB33-2767FA336D77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telefonia.Web", "Telefonia.Web\Telefonia.Web.csproj", "{5691599E-F486-492D-8439-99B70674ADD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
