@@ -123,5 +123,8 @@
   <ItemGroup>
     <Folder Include="Providers\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScriptTabela.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
