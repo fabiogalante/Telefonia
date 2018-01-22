@@ -7,15 +7,7 @@
         <form name="frmImportacao">
             <div class="col-xs-10 col-sm-4 col-md-4 col-lg-3">
                 <h4>Data :</h4>
-                <input date-range-picker id="dataInicial" name="dataInicial" ng-model="dataInicial" class="form-control date-picker" type="date" (change)="changeDate($event)" />
-                <!--<div role="alert">
-                    <span class="error" ng-show="frmLofrmImportacaogs.dataInicial.$error.required">
-                        Informe a data.
-                    </span>
-                    <span class="error" ng-show="frmImportacao.dataInicial.$error.date">
-                        Data inválida.
-                    </span>
-                </div>-->
+                <input date-range-picker id="dataInicial" name="dataInicial" [(ngModel)]="dataInicial" class="form-control date-picker" type="date" (change)="changeDate($event)" />
                 <br />
                 <button type="button" class="btn btn-primary" btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0" (click)="btnImportarClick($event)">
                     Importar

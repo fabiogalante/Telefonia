@@ -17,9 +17,9 @@ export class LogsService {
     getLogsByDateRange(dataInicial: string, dataFinal: string) {
 
         var datePipe = new DatePipe("pt-BR");
-        var strdataInicial = datePipe.transform(dataInicial, 'yyyyMMddT000000');
-        var strdataFinal = datePipe.transform(dataFinal, 'yyyyMMddT105959');
+        var strdataInicial = datePipe.transform(dataInicial, 'dd-MM-yyyy');
+        var strdataFinal = datePipe.transform(dataFinal, 'dd-MM-yyyy');
 
-        return this.http.get("/api/logsistemas?strDataInicial=" + strdataInicial + "&strdataFinal=" + strdataFinal).map(data => <LogModel[]>data.json());
+        return this.http.get("http://127.0.0.1:5003/api/logs/obter?strDataInicial=" + strdataInicial + "&strDataFinal=" + strdataFinal).map(data => <LogModel[]>data.json());
     }
 }

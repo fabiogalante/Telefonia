@@ -10,6 +10,9 @@ export class LogsComponent implements OnInit {
 
     logs: LogModel[] = [];
 
+    dataInicial: any;
+    dataFinal: any;
+
     constructor(private logService: LogsService) { }
 
     private getLogsByDateRange(dataInicial: string, dataFinal: string) {
@@ -25,7 +28,7 @@ export class LogsComponent implements OnInit {
 
     ngOnInit() { }
 
-    changeDate(event: Event) {
-        this.getLogsByDateRange((<HTMLInputElement>document.getElementById('dataInicial')).value, (<HTMLInputElement>document.getElementById('dataFinal')).value);
+    btnBuscarClick(event: Event) {
+        this.getLogsByDateRange(this.dataInicial, this.dataFinal);
     }
 }

@@ -34,6 +34,14 @@ namespace Telefonia.Dominio.Servico
 
             var dados = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Logs>>(conteudo));
 
+            /*dados = new List<Logs>()
+            {
+                new Logs{
+                    LogSistemaId= 346842,
+
+                }
+            }*/
+
             if(dados != null)
                 _repositorioLog.Salvar(dados);
 

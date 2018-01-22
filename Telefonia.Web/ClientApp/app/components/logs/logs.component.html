@@ -5,27 +5,23 @@
     <div class="col-lg-">
         <br>
         <form name="frmLogs">
-            <div class="col-xs-10 col-sm-4 col-md-4 col-lg-3">
-                <h4>Data inicial:</h4>
-                <input date-range-picker id="dataInicial" name="dataInicial" ng-model="dataInicial" max="{{dataFinal|date:'yyyy-MM-dd'}}" class="form-control date-picker" type="date" (change)="changeDate($event)" />
+            <div class="row">
+                <div class="col-xs-10 col-sm-4 col-md-4 col-lg-3">
+                    <h4>Data inicial:</h4>
+                    <input date-range-picker id="dataInicial" name="dataInicial" [(ngModel)]="dataInicial" max="{{dataFinal|date:'yyyy-MM-dd'}}" class="form-control date-picker" type="date" (change)="changeDate($event)" />
+                </div>
+                <div class="col-xs-10 col-sm-4 col-md-4 col-lg-3">
+                    <h4>Data final:</h4>
+                    <input date-range-picker id="dataFinal" name="dataFinal" [(ngModel)]="dataFinal" min="{{dataInicial|date:'yyyy-MM-dd'}}" class="form-control date-picker" type="date" (change)="changeDate($event)" />
+                </div>
             </div>
-            <div class="col-xs-10 col-sm-4 col-md-4 col-lg-3">
-                <h4>Data final:</h4>
-                <input date-range-picker id="dataFinal" name="dataFinal" ng-model="dataFinal" min="{{dataInicial|date:'yyyy-MM-dd'}}" class="form-control date-picker" type="date" (change)="changeDate($event)" />
-            </div>
-            <div role="alert">
-                <span class="error" ng-show="frmLogs.dataInicial.$error.required">
-                    Informe a data inicial.
-                </span>
-                <span class="error" ng-show="frmLogs.dataFinal.$error.required">
-                    Informe a data final.
-                </span>
-                <span class="error" ng-show="frmLogs.dataInicial.$error.date">
-                    Data inicial inválida.
-                </span>
-                <span class="error" ng-show="frmLogs.dataFinal.$error.date">
-                    Data inicial inválida.
-                </span>
+            <br />
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-primary" btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0" (click)="btnBuscarClick($event)">
+                        Buscar
+                    </button>
+                </div>
             </div>
         </form>
     </div>
@@ -50,7 +46,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of logs">
-                    <td>{{item.id}}</td>
+                    <td>{{item.logSistemaId}}</td>
                     <td>{{item.data | date:'dd-MM-yyyy'}}</td>
                     <td>{{item.logOrigemId}}</td>
                     <td>{{item.severidade}}</td>

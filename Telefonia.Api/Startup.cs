@@ -30,7 +30,7 @@ namespace Telefonia.Api
             );
 
             // Habilitando o cors
-            config.EnableCors();
+            config.EnableCors(new System.Web.Http.Cors.EnableCorsAttribute("*", "*", "*"));
 
             // Configurações de injeção de dependência
             ConfiguracaoDi(appBuilder, config);

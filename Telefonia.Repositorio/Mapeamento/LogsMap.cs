@@ -11,7 +11,10 @@ namespace Telefonia.Repositorio.Mapeamento
             ToTable("LogSistema");
 
             // Chave primária
-            HasKey(p => p.LogSistemaId);
+            // HasKey(p => p.LogSistemaId);
+
+            //modelBuilder.Entity<Foo>().HasKey(p => new { p.Name, p.Id });
+            //modelBuilder.Entity<Logs>().Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Coluna: LogSistemaId - BIGINT | NOT NULL | Ordem: 1
             Property(x => x.LogSistemaId).HasColumnName("LogSistemaId").HasColumnType("BIGINT").IsRequired().HasColumnOrder(1);

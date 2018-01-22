@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using Telefonia.Dominio.Entidades;
 using Telefonia.Repositorio.Mapeamento;
@@ -20,6 +21,9 @@ namespace Telefonia.Repositorio
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new LogsMap());
+
+            modelBuilder.Entity<Logs>().HasKey(p => new { p.LogSistemaId });
+            modelBuilder.Entity<Logs>().Property(p => p.LogSistemaId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
             base.OnModelCreating(modelBuilder);
         }

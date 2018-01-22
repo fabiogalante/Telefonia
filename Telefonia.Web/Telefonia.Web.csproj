@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Owin" Version="4.1.0" />
+    <PackageReference Include="Autofac.WebApi2" Version="4.1.0" />
+    <PackageReference Include="Autofac.WebApi2.Owin" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Owin" Version="4.0.0-preview1" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.0.0-preview1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
@@ -24,6 +30,11 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\importacao\importacao.component.ts" />
     <None Remove="ClientApp\app\components\logs\logs.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Telefonia.Dominio\Telefonia.Dominio.csproj" />
+    <ProjectReference Include="..\Telefonia.Repositorio\Telefonia.Repositorio.csproj" />
   </ItemGroup>
 
   <ItemGroup>

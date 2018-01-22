@@ -1,16 +1,58 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>
-    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>
-    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>
-    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>
-    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>
-</ul>
+<h1>Teste - IPCORP</h1>
+<p>
+    Nos itens a seguir ser&atilde;o avaliados conhecimentos em programa&ccedil;&atilde;o C#, Frontend, SQL,
+    l&oacute;gica de programa&ccedil;&atilde;o e organiza&ccedil;&atilde;o do projeto. &Eacute; livre a
+    utiliza&ccedil;&atilde;o de qualquer t&eacute;cnica, padr&atilde;o de desenvolvimento, ferramentas e plug-ins.
+</p>
+<h2>Start do projeto</h2>
+<p>
+    Buildar a solution e startar o projeto <strong>Telefonia.Web</strong>. Apos isso, rodar o microserviço self-hosted executado na pasta
+    <strong>\Telefonia.Api\bin\Debug\Telefonia.Api.exe</strong>
+</p>
+<h2>Avalia&ccedil;&atilde;o Backend</h2>
+<p>
+    - Criar um projeto C# .Net Core ou .Net Full que fa&ccedil;a as seguintes opera&ccedil;&otilde;es<br />
+    - Fazer um get em uma API REST;<br />
+    - Persistir os dados em uma tabela com a mesma estrutura;<br />
+    - Fazer o Get dessa tabela e disponibiliza-la em uma API REST;
+</p>
+<h2>Dados da API</h2>
+<p>
+    A api abaixo requer autentica&ccedil;&atilde;o oauth, onde ser&aacute; necess&aacute;rio enviar no header de
+    cada requisi&ccedil;&atilde;o o authorization: bearer + token recebido pela api de autentica&ccedil;&atilde;o.
+</p>
+<p>
+    Api de autentica&ccedil;&atilde;o: http://integracao.epbx.com.br:5050/Service/oauth2/Token
+</p>
+<p>
+    - grant_type:password<br />
+    - username:teste<br />
+    - password:teste<br />
+    - client_id:abc<br />
+</p>
+<p>
+    Api de teste: http://integracao.epbx.com.br/Service/api/LogSistema?$filter=Data ge 2017-03-15
+</p>
+<p>
+    Filtro oData: pode ser alterado para o dia em que o teste for executado para retornar menor volume de dados.
+</p>
+<p>
+    - Banco de Dados:<br />
+    - Host: 177.38.218.8<br />
+    - User: teste<br />
+    - Password: Teste@2017$Sql<br />
+    - Database: Teste<br />
+    - Table: LogSistema<br />
+</p>
+<h2>Avalia&ccedil;&atilde;o Frontend</h2>
+<p>
+    Criar um projeto simples utilizando angularJs que fa&ccedil;a as seguintes opera&ccedil;&otilde;es:
+</p>
+<p>
+    - Chamar a api rest criada na quest&atilde;o anterior, usando $resource ou $http.<br />
+    - Exibir os dados retornados pela api em uma tabela html
+</p>
+<h2>Avalia&ccedil;&atilde;o opcional</h2>
+<p>
+    Criar um projeto de testes unit&aacute;rio para api criada.
+</p>

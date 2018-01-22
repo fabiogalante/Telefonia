@@ -8,6 +8,8 @@ import { ImportacaoService } from './importacao.service';
 
 export class ImportacaoComponent implements OnInit {
 
+    dataInicial: any;
+
     constructor(private importacaoService: ImportacaoService) { }
 
     ngOnInit() { }
@@ -17,12 +19,12 @@ export class ImportacaoComponent implements OnInit {
         if (dataInicial == "") return;
 
         this.importacaoService.ObterDados(dataInicial).subscribe(
-            error => alert(error),
+            error => alert('Não foi possível importar os dados.'),
             () => alert('Dados importados com sucesso.')
         );
     }
 
     btnImportarClick(event: Event) {
-        this.importData((<HTMLInputElement>document.getElementById('dataInicial')).value);
+        this.importData(this.dataInicial);
     }
 }

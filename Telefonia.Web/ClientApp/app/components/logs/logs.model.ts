@@ -1,15 +1,15 @@
 ﻿export interface LogModel {
-    Id: number;
-    Data: Date;
-    LogOrigemId: number;
-    Severidade: string;
-    Mensagem: string;
-    ArquivoFonte: string;
-    MetodoFonte: string;
-    LinhaFonte: number;
-    Maquina: string;
-    Propriedades: string;
-    Excecao: string;
-    UsuarioId: number;
-    LogContextoId: number;
+    logSistemaId: number;
+    data: Date;
+    logOrigemId: number;
+    severidade: string;
+    mensagem: string;
+    arquivoFonte: string;
+    metodoFonte: string;
+    linhaFonte: number;
+    maquina: string;
+    propriedades: string;
+    excecao: string;
+    usuarioId: number;
+    logContextoId: number;
 }

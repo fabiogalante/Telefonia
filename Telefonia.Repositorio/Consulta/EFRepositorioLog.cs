@@ -32,7 +32,7 @@ namespace Telefonia.Repositorio.Consulta
             }
             catch (Exception ex)
             {
-                throw ex;
+                var teste = ex;
             }
         }
 
