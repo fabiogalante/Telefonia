@@ -18,12 +18,12 @@ namespace Telefonia.Api.Controller
 
         [HttpGet]
         [Route("obter")]
-        public async Task<IHttpActionResult> ObterPorData(string dataInicial, string dataFinal)
+        public async Task<IHttpActionResult> ObterPorData(string strDataInicial, string strDataFinal)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var logs = await _servicoLog.ListarPorData(Convert.ToDateTime(dataInicial), Convert.ToDateTime(dataFinal));
+            var logs = await _servicoLog.ListarPorData(Convert.ToDateTime(strDataInicial), Convert.ToDateTime(strDataFinal));
 
             if (logs == null)
                 return NotFound();

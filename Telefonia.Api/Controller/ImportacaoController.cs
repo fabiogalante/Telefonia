@@ -20,12 +20,12 @@ namespace Telefonia.Api.Controller
 
         [HttpGet]
         [Route("importar")]
-        public async Task<IHttpActionResult> Importar()
+        public async Task<IHttpActionResult> Importar(string strData)
         {
-            DateTime dataInicial = DateTime.Now; //.AddMonths(-15);
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            DateTime dataInicial = Convert.ToDateTime(strData);
 
             var retorno = await _servicoLog.Importar(dataInicial);
 
